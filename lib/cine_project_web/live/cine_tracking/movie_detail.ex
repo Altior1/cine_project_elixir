@@ -3,6 +3,7 @@ defmodule CineProjectWeb.CineTracking.MovieDetail do
   vue simple des élements détaillé d'un film
   """
   use Phoenix.LiveView
+  alias CineProject.Catalog
 
   @impl true
   def render(assigns) do
@@ -11,6 +12,7 @@ defmodule CineProjectWeb.CineTracking.MovieDetail do
     <p>Année: {@movie["year"]}</p>
     <p>Résumé: {@movie["synopsis"]}</p>
     <img src={@movie["poster"]} alt={@movie["poster"]} />
+    <a href="/">Retour à la liste des films</a>
     """
   end
 

@@ -6,10 +6,12 @@ defmodule CineProject.Catalog do
   @doc """
   interroge le back pour obtenir la liste des films du back
   """
-  def list_movies do
-    case HTTPoison.get("http://localhost:3000/movies") do
+  def list_movies(page, per_page) do
+    case HTTPoison.get("http://localhost:3000/movies?_page=#{page}&_per_page=#{per_page}") do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
-        {:ok, Jason.decode!(body)}
+        body = Jason.decode!(body)
+        data = body["data"]
+        {:ok, data}
 
       _ ->
         {:error, "back can't be reached"}
