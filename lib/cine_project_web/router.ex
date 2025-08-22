@@ -17,7 +17,8 @@ defmodule CineProjectWeb.Router do
   scope "/", CineProjectWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    # get "/", PageController, :home
+    live "/", CineTracking.MovieList, :index
   end
 
   # Other scopes may use custom stacks.

@@ -3,6 +3,7 @@ defmodule CineProjectWeb.CineTracking.MovieList do
   contient le module pour afficher la liste des films
   """
   use Phoenix.LiveView
+  alias CineProjectWeb.ComponentFilms
 
   alias CineProject.Catalog
 
@@ -11,14 +12,14 @@ defmodule CineProjectWeb.CineTracking.MovieList do
     <h1>Movie List</h1>
     <ul>
       <%= for movie <- @movies do %>
-        <li>{movie.title} ({movie.year})</li>
+        <ComponentFilms.film_info movie={movie} />
       <% end %>
     </ul>
     """
   end
 
   def mount(_params, _session, socket) do
-    movies = Catalog.list_movies()
+    {:ok, movies} = Catalog.list_movies()
     {:ok, assign(socket, movies: movies)}
   end
 end

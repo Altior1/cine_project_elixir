@@ -1,0 +1,9 @@
+.film-info {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #555;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}

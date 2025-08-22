@@ -1,10 +1,11 @@
 /* See the Tailwind configuration guide for advanced usage
    https://tailwindcss.com/docs/configuration */
 
-@import "tailwindcss" source(none);
+@source "tailwindcss" source(none);
 @source "../css";
 @source "../js";
 @source "../../lib/cine_project_web";
+
 
 /* A Tailwind plugin that makes "hero-#{ICON}" classes available.
    The heroicons installation itself is managed by your mix.exs */
