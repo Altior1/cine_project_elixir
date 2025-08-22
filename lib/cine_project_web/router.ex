@@ -19,6 +19,7 @@ defmodule CineProjectWeb.Router do
 
     # get "/", PageController, :home
     live "/", CineTracking.MovieList, :index
+    live "/add_film", AddFilm, :index
   end
 
   # Other scopes may use custom stacks.

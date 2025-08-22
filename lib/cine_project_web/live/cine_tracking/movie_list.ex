@@ -10,6 +10,7 @@ defmodule CineProjectWeb.CineTracking.MovieList do
   def render(assigns) do
     ~H"""
     <h1>Movie List</h1>
+    <a href="/add_film">Ajouter un film</a>
     <ul>
       <%= for movie <- @movies do %>
         <ComponentFilms.film_info movie={movie} />

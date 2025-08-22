@@ -16,6 +16,16 @@ defmodule CineProject.Catalog do
     end
   end
 
+  def get_movie!(id) do
+    case HTTPoison.get("http://localhost:3000/movies/#{id}") do
+      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+        Jason.decode!(body)
+
+      _ ->
+        %{}
+    end
+  end
+
   @doc """
   interroge le back pour ajouter un film
   """

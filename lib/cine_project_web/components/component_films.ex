@@ -11,8 +11,6 @@ defmodule CineProjectWeb.ComponentFilms do
     ~H"""
     <div class="film-info border p-4 mb-4 rounded-lg shadow-lg bg-white">
       <h2>{@movie["title"]}</h2>
-      <p>Année : {@movie["year"]}</p>
-      <p>Résumé : {@movie["sinopsis"]}</p>
       <img
         src={@movie["poster"]}
         alt={"Affiche de #{@movie["title"]}"}
